@@ -13,8 +13,8 @@ from fastapi.testclient import TestClient
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from api.app import app
-from api.schemas import PatientData, PredictionResponse
+from api.app import app  # noqa: E402
+from api.schemas import PatientData  # noqa: E402
 
 # Create test client
 client = TestClient(app)

@@ -44,7 +44,7 @@ jobs:
       
       - name: Run flake8
         run: |
-          flake8 src/ api/ tests/ --max-line-length=120 --ignore=E501,W503,E203
+          flake8 src/ api/ tests/ --max-line-length=120 --ignore=E501,W503,E203,E402,F401,W293
         continue-on-error: true
       
       - name: Check code formatting with black

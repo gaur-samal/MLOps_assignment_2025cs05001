@@ -8,7 +8,6 @@ import sys
 from pathlib import Path
 
 import numpy as np
-import pandas as pd
 import pytest
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -16,8 +15,13 @@ from sklearn.linear_model import LogisticRegression
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.model import MODEL_CONFIGS, cross_validate_model, evaluate_model, get_model
-from src.predict import (
+from src.model import (  # noqa: E402
+    MODEL_CONFIGS,
+    cross_validate_model,
+    evaluate_model,
+    get_model,
+)
+from src.predict import (  # noqa: E402
     FEATURE_DESCRIPTIONS,
     FEATURE_NAMES,
     HeartDiseasePredictor,

@@ -14,7 +14,7 @@ import pytest
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.data_processing import (
+from src.data_processing import (  # noqa: E402
     CATEGORICAL_FEATURES,
     FEATURE_NAMES,
     NUMERICAL_FEATURES,
@@ -22,8 +22,6 @@ from src.data_processing import (
     convert_target_to_binary,
     get_data_summary,
     get_feature_target_split,
-    load_data,
-    prepare_data,
 )
 
 
