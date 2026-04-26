@@ -5,7 +5,7 @@
 
 **Course**: MLOps (S2-25_AMLCSZG523)  
 **Assignment**: Assignment I  
-**Total Marks**: 50  
+**BITS ID**: 2025cs05001  
 
 ---
 
@@ -23,7 +23,6 @@
 10. [Architecture Diagram](#10-architecture-diagram)
 11. [Setup Instructions](#11-setup-instructions)
 12. [Conclusion](#12-conclusion)
-13. [References](#13-references)
 
 ---
 
@@ -617,16 +616,6 @@ This project successfully demonstrates a complete MLOps pipeline for heart disea
 3. Add data drift detection
 4. Implement feature store
 5. Add explainability with SHAP values
-
----
-
-## 13. References
-
-1. UCI Machine Learning Repository - Heart Disease Dataset
-2. MLflow Documentation - https://mlflow.org/docs/latest/index.html
-3. FastAPI Documentation - https://fastapi.tiangolo.com/
-4. Kubernetes Documentation - https://kubernetes.io/docs/
-5. Docker Best Practices - https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 
 ---
 
