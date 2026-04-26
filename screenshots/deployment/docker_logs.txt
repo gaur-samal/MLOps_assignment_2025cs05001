@@ -1,0 +1,21 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+2026-04-26 05:16:26,216 - api.app - INFO - Starting Heart Disease Prediction API...
+2026-04-26 05:16:26,711 - api.app - INFO - Model loaded from /app/models/model.pkl
+2026-04-26 05:16:26,722 - api.app - INFO - Preprocessor loaded from /app/models/preprocessor.pkl
+2026-04-26 05:16:26,723 - api.app - INFO - API startup complete
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-04-26 05:16:30,620 - api.app - INFO - GET /health - Status: 200 - Latency: 0.001s
+INFO:     127.0.0.1:54832 - "GET /health HTTP/1.1" 200 OK
+2026-04-26 05:16:39,630 - api.app - INFO - GET /health - Status: 200 - Latency: 0.004s
+INFO:     192.168.65.1:18166 - "GET /health HTTP/1.1" 200 OK
+2026-04-26 05:16:47,422 - api.app - INFO - Prediction: 0, Confidence: 0.833, Risk: Low
+2026-04-26 05:16:47,424 - api.app - INFO - POST /predict - Status: 200 - Latency: 0.043s
+INFO:     192.168.65.1:17430 - "POST /predict HTTP/1.1" 200 OK
+2026-04-26 05:17:00,824 - api.app - INFO - GET /health - Status: 200 - Latency: 0.002s
+INFO:     127.0.0.1:55750 - "GET /health HTTP/1.1" 200 OK
+2026-04-26 05:17:31,043 - api.app - INFO - GET /health - Status: 200 - Latency: 0.002s
+INFO:     127.0.0.1:38232 - "GET /health HTTP/1.1" 200 OK
+2026-04-26 05:18:01,400 - api.app - INFO - GET /health - Status: 200 - Latency: 0.002s
+INFO:     127.0.0.1:49688 - "GET /health HTTP/1.1" 200 OK
