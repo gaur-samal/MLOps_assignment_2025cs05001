@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/gsamal/Downloads/Mlops_assignment/notebooks/../mlruns/889359744790391129/a5c2f1f5554b4f91afba908bc12f82fb/artifacts
+end_time: 1777189307211
+entry_point_name: ''
+experiment_id: '889359744790391129'
+lifecycle_stage: active
+run_id: a5c2f1f5554b4f91afba908bc12f82fb
+run_name: Random_Forest_Tuned
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777189303640
+status: 3
+tags: []
+user_id: gsamal

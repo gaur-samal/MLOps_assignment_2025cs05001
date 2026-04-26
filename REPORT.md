@@ -199,7 +199,8 @@ mlruns/
 
 Access experiments via:
 ```bash
-mlflow ui --backend-store-uri file:./mlruns --port 5000
+mlflow ui --backend-store-uri file:./mlruns --port 5000 --host 127.0.0.1
+# Open http://127.0.0.1:5000 in browser
 ```
 
 ### 4.4 Logged Artifacts
@@ -549,7 +550,7 @@ chmod +x download_data.sh
 jupyter notebook notebooks/01_eda.ipynb
 
 # 6. Train model
-python -c "exec(open('notebooks/02_model_training.ipynb').read())"
+jupyter notebook notebooks/02_model_training.ipynb
 
 # 7. Start API
 uvicorn api.app:app --reload
@@ -646,7 +647,7 @@ MLOps_assignment_2025cs05001/
 - **Repository**: https://github.com/gaur-samal/MLOps_assignment_2025cs05001
 - **CI/CD Pipeline**: https://github.com/gaur-samal/MLOps_assignment_2025cs05001/actions
 - **API Documentation**: http://localhost:8000/docs
-- **MLflow UI**: http://localhost:5000
+- **MLflow UI**: http://127.0.0.1:5000
 
 ---
 

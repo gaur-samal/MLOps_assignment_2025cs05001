@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/gsamal/Downloads/Mlops_assignment/notebooks/../mlruns/889359744790391129/5510d74cc7f44c4897bbe249d2aaaf25/artifacts
+end_time: 1777189308927
+entry_point_name: ''
+experiment_id: '889359744790391129'
+lifecycle_stage: active
+run_id: 5510d74cc7f44c4897bbe249d2aaaf25
+run_name: Best_Model_Final
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777189307427
+status: 3
+tags: []
+user_id: gsamal

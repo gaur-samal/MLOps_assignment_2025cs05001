@@ -1,0 +1,8 @@
+artifact_location: file:///Users/gsamal/Downloads/Mlops_assignment/notebooks/../mlruns/889359744790391129
+creation_time: 1777189278804
+experiment_id: '889359744790391129'
+last_update_time: 1777189278804
+lifecycle_stage: active
+name: heart_disease_classification
+trace_location: null
+workspace: default

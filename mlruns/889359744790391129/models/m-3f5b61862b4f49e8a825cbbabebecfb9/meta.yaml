@@ -1,0 +1,10 @@
+artifact_location: file:///Users/gsamal/Downloads/Mlops_assignment/notebooks/../mlruns/889359744790391129/models/m-3f5b61862b4f49e8a825cbbabebecfb9/artifacts
+creation_timestamp: 1777189307445
+experiment_id: '889359744790391129'
+last_updated_timestamp: 1777189308914
+model_id: m-3f5b61862b4f49e8a825cbbabebecfb9
+model_type: null
+name: model
+source_run_id: 5510d74cc7f44c4897bbe249d2aaaf25
+status: 2
+status_message: null

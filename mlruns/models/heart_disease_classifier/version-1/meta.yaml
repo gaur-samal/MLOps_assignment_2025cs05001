@@ -1,0 +1,16 @@
+creation_timestamp: 1777189308921
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1777189308921
+model_id: m-3f5b61862b4f49e8a825cbbabebecfb9
+name: heart_disease_classifier
+run_id: 5510d74cc7f44c4897bbe249d2aaaf25
+run_link: null
+source: models:/m-3f5b61862b4f49e8a825cbbabebecfb9
+status: READY
+status_message: null
+storage_location: file:///Users/gsamal/Downloads/Mlops_assignment/notebooks/../mlruns/889359744790391129/models/m-3f5b61862b4f49e8a825cbbabebecfb9/artifacts
+user_id: null
+version: 1
+workspace: default

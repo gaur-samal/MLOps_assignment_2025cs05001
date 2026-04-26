@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/gsamal/Downloads/Mlops_assignment/notebooks/../mlruns/889359744790391129/e5bc9968f34747b788f8ef5fb2069244/artifacts
+end_time: 1777189287430
+entry_point_name: ''
+experiment_id: '889359744790391129'
+lifecycle_stage: active
+run_id: e5bc9968f34747b788f8ef5fb2069244
+run_name: Logistic_Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777189285118
+status: 3
+tags: []
+user_id: gsamal

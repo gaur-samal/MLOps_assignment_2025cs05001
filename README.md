@@ -288,7 +288,8 @@ flake8 src/ api/ tests/
 
 ```bash
 # Start MLflow UI
-mlflow ui --backend-store-uri file:./mlruns --port 5000
+mlflow ui --backend-store-uri file:./mlruns --port 5000 --host 127.0.0.1
+# Open http://127.0.0.1:5000 in browser
 
 # Open http://localhost:5000
 ```
