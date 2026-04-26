@@ -1,0 +1,28 @@
+# Heart Disease API - ConfigMap
+# Configuration and environment variables
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: heart-disease-config
+  labels:
+    app: heart-disease-api
+data:
+  MODEL_PATH: "/app/models/model.pkl"
+  PREPROCESSOR_PATH: "/app/models/preprocessor.pkl"
+  LOG_LEVEL: "INFO"
+  API_HOST: "0.0.0.0"
+  API_PORT: "8000"
+---
+# Secret for sensitive data (example)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: heart-disease-secrets
+  labels:
+    app: heart-disease-api
+type: Opaque
+data:
+  # Base64 encoded values
+  # echo -n "value" | base64
+  api-key: YXBpLWtleS1wbGFjZWhvbGRlcg==

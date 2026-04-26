@@ -1,0 +1,35 @@
+# Heart Disease API - Kubernetes Service
+# Exposes the API via LoadBalancer
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: heart-disease-api
+  labels:
+    app: heart-disease-api
+spec:
+  type: LoadBalancer
+  selector:
+    app: heart-disease-api
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8000
+      protocol: TCP
+---
+# ClusterIP Service for internal access
+apiVersion: v1
+kind: Service
+metadata:
+  name: heart-disease-api-internal
+  labels:
+    app: heart-disease-api
+spec:
+  type: ClusterIP
+  selector:
+    app: heart-disease-api
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+      protocol: TCP
