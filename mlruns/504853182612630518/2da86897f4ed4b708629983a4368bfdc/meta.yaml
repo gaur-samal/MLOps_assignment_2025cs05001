@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/gsamal/Downloads/Mlops_assignment/mlruns/504853182612630518/2da86897f4ed4b708629983a4368bfdc/artifacts
+end_time: 1777179873421
+entry_point_name: ''
+experiment_id: '504853182612630518'
+lifecycle_stage: active
+run_id: 2da86897f4ed4b708629983a4368bfdc
+run_name: Gradient_Boosting
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777179873336
+status: 3
+tags: []
+user_id: gsamal

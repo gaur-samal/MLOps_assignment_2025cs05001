@@ -1,0 +1,8 @@
+artifact_location: file:///Users/gsamal/Downloads/Mlops_assignment/mlruns/504853182612630518
+creation_time: 1777179845061
+experiment_id: '504853182612630518'
+last_update_time: 1777179845061
+lifecycle_stage: active
+name: heart-disease-prediction
+trace_location: null
+workspace: default

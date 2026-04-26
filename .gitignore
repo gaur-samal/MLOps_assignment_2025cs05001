@@ -69,7 +69,6 @@ venv.bak/
 *~
 
 # MLflow
-mlruns/
 mlartifacts/
 
 # Models (keep structure but ignore large files)

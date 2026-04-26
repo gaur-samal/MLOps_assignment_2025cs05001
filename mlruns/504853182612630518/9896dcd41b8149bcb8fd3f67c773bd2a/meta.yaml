@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/gsamal/Downloads/Mlops_assignment/mlruns/504853182612630518/9896dcd41b8149bcb8fd3f67c773bd2a/artifacts
+end_time: 1777179873429
+entry_point_name: ''
+experiment_id: '504853182612630518'
+lifecycle_stage: active
+run_id: 9896dcd41b8149bcb8fd3f67c773bd2a
+run_name: salty-moth-762
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777179873422
+status: 3
+tags: []
+user_id: gsamal
