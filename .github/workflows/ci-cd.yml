@@ -44,18 +44,16 @@ jobs:
       
       - name: Run flake8
         run: |
-          flake8 src/ api/ tests/ --max-line-length=120 --ignore=E501,W503
+          flake8 src/ api/ tests/ --max-line-length=120 --ignore=E501,W503,E203
         continue-on-error: true
       
       - name: Check code formatting with black
         run: |
           black --check --diff src/ api/ tests/
-        continue-on-error: true
       
       - name: Check import sorting with isort
         run: |
-          isort --check-only --diff src/ api/ tests/
-        continue-on-error: true
+          isort --profile black --check-only --diff src/ api/ tests/
 
   # ====================
   # Job 2: Unit Tests
