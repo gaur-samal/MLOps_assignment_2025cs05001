@@ -1,0 +1,76 @@
+flowchart TB
+    subgraph DataLayer["📊 Data Layer"]
+        RawData["📁 Raw Data<br/>heart.csv"]
+        DataClean["🧹 Data Cleaning<br/>data_processing.py"]
+        FeatureEng["⚙️ Feature Engineering<br/>feature_engineering.py"]
+        CleanData["📁 Processed Data<br/>cleaned.csv"]
+        
+        RawData --> DataClean
+        DataClean --> FeatureEng
+        FeatureEng --> CleanData
+    end
+    
+    subgraph ModelLayer["🤖 Model Training Layer"]
+        Training["🎯 Model Training<br/>• Logistic Regression<br/>• Random Forest<br/>• Gradient Boosting"]
+        HPTuning["🔧 Hyperparameter<br/>Tuning<br/>GridSearchCV"]
+        MLflow["📈 MLflow Tracking<br/>• Parameters<br/>• Metrics<br/>• Artifacts"]
+        BestModel["💾 Best Model<br/>model.pkl"]
+        
+        Training --> HPTuning
+        HPTuning --> MLflow
+        MLflow --> BestModel
+    end
+    
+    subgraph APILayer["🌐 API Layer"]
+        FastAPI["⚡ FastAPI Application"]
+        Health["/health"]
+        Predict["/predict"]
+        Features["/features"]
+        Metrics["/metrics"]
+        
+        FastAPI --> Health
+        FastAPI --> Predict
+        FastAPI --> Features
+        FastAPI --> Metrics
+    end
+    
+    subgraph ContainerLayer["📦 Container Layer"]
+        Docker["🐳 Docker Container"]
+        PyEnv["Python 3.12"]
+        ModelPkl["model.pkl"]
+        Preproc["preprocessor.pkl"]
+        
+        Docker --> PyEnv
+        Docker --> ModelPkl
+        Docker --> Preproc
+    end
+    
+    subgraph K8sLayer["☸️ Kubernetes Layer"]
+        Deploy["📋 Deployment<br/>3 replicas"]
+        Service["🔌 Service<br/>ClusterIP"]
+        HPA["📊 HPA<br/>Auto-scaling"]
+        ConfigMap["⚙️ ConfigMap"]
+        
+        Deploy --> Service
+        Deploy --> HPA
+        Deploy --> ConfigMap
+    end
+    
+    subgraph CICDLayer["🔄 CI/CD Layer"]
+        direction LR
+        Lint["🔍 Lint<br/>flake8/black"]
+        Test["🧪 Test<br/>pytest"]
+        Train["📚 Train<br/>Model"]
+        Build["🏗️ Build<br/>Docker"]
+        DeployJob["🚀 Deploy<br/>GHCR"]
+        
+        Lint --> Test
+        Test --> Train
+        Train --> Build
+        Build --> DeployJob
+    end
+    
+    CleanData --> Training
+    BestModel --> FastAPI
+    FastAPI --> Docker
+    Docker --> Deploy

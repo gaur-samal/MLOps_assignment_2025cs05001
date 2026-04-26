@@ -16,7 +16,7 @@ permissions:
   packages: write
 
 env:
-  PYTHON_VERSION: '3.10'
+  PYTHON_VERSION: '3.12'
   DOCKER_IMAGE: heart-disease-api
   DOCKER_REGISTRY: ghcr.io
   # Opt into Node.js 24 for GitHub Actions (required after June 2026)
@@ -82,7 +82,7 @@ jobs:
       
       - name: Run unit tests with coverage
         run: |
-          pytest tests/ -v --cov=src --cov=api --cov-report=xml --cov-report=html --junitxml=test-results.xml
+          pytest tests/ -v --tb=long --cov=src --cov=api --cov-report=xml --cov-report=html --junitxml=test-results.xml
       
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
