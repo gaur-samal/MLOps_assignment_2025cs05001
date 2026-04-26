@@ -4,20 +4,21 @@ Unit Tests for Data Processing Module
 Tests for data loading, cleaning, and preprocessing functions.
 """
 
-import pytest
-import pandas as pd
-import numpy as np
 import sys
 from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import pytest
 
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.data_processing import (
-    load_data, clean_data, convert_target_to_binary,
-    get_feature_target_split, prepare_data, get_data_summary,
-    FEATURE_NAMES, CATEGORICAL_FEATURES, NUMERICAL_FEATURES
-)
+from src.data_processing import (CATEGORICAL_FEATURES, FEATURE_NAMES,
+                                 NUMERICAL_FEATURES, clean_data,
+                                 convert_target_to_binary, get_data_summary,
+                                 get_feature_target_split, load_data,
+                                 prepare_data)
 
 
 class TestDataProcessing:

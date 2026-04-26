@@ -4,12 +4,13 @@ Prediction Module
 Handles model inference and prediction utilities.
 """
 
+import logging
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Union
+
+import joblib
 import numpy as np
 import pandas as pd
-import joblib
-from pathlib import Path
-from typing import Dict, List, Union, Any, Optional
-import logging
 
 logger = logging.getLogger(__name__)
 

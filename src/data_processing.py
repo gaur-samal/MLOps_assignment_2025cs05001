@@ -4,11 +4,12 @@ Data Processing Module
 Handles data loading, cleaning, and preprocessing for the Heart Disease dataset.
 """
 
-import pandas as pd
-import numpy as np
-from pathlib import Path
-from typing import Tuple, Optional, List
 import logging
+from pathlib import Path
+from typing import List, Optional, Tuple
+
+import numpy as np
+import pandas as pd
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -160,7 +161,7 @@ def prepare_data(
         Tuple of (X_train, X_test, y_train, y_test)
     """
     from sklearn.model_selection import train_test_split
-    
+
     # Load and clean data
     df = load_data(data_path)
     df = clean_data(df)

@@ -4,9 +4,10 @@ Pydantic Schemas for Heart Disease Prediction API
 Defines request and response models for the FastAPI application.
 """
 
-from pydantic import BaseModel, Field, validator
-from typing import Optional, Dict, Any, List
 from enum import Enum
+from typing import Any, Dict, List, Optional
+
+from pydantic import BaseModel, Field, validator
 
 
 class ChestPainType(int, Enum):

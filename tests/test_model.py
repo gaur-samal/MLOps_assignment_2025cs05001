@@ -4,25 +4,22 @@ Unit Tests for Model Module
 Tests for model training, evaluation, and prediction functions.
 """
 
-import pytest
-import numpy as np
-import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
 import sys
 from pathlib import Path
+
+import numpy as np
+import pandas as pd
+import pytest
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.model import (
-    get_model, evaluate_model, cross_validate_model,
-    MODEL_CONFIGS
-)
-from src.predict import (
-    HeartDiseasePredictor, create_sample_input,
-    FEATURE_NAMES, FEATURE_DESCRIPTIONS
-)
+from src.model import (MODEL_CONFIGS, cross_validate_model, evaluate_model,
+                       get_model)
+from src.predict import (FEATURE_DESCRIPTIONS, FEATURE_NAMES,
+                         HeartDiseasePredictor, create_sample_input)
 
 
 class TestModelFunctions:

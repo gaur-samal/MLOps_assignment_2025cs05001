@@ -11,31 +11,30 @@ Features:
 - Structured logging
 """
 
+import logging
 import os
 import sys
 import time
-import logging
+from contextlib import asynccontextmanager
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
-from contextlib import asynccontextmanager
 
+import joblib
 import numpy as np
 import pandas as pd
-import joblib
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from prometheus_client import Counter, Histogram, generate_latest, CONTENT_TYPE_LATEST
+from prometheus_client import (CONTENT_TYPE_LATEST, Counter, Histogram,
+                               generate_latest)
 from starlette.responses import Response
 
 # Add parent directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from api.schemas import (
-    PatientData, PredictionResponse, ErrorResponse,
-    HealthResponse, FeaturesResponse, FeatureInfo
-)
+from api.schemas import (ErrorResponse, FeatureInfo, FeaturesResponse,
+                         HealthResponse, PatientData, PredictionResponse)
 
 # Configure logging
 logging.basicConfig(

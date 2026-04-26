@@ -4,26 +4,27 @@ Model Training Module
 Handles model training, evaluation, and experiment tracking with MLflow.
 """
 
-import numpy as np
-import pandas as pd
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
-from sklearn.model_selection import cross_val_score, GridSearchCV, StratifiedKFold
-from sklearn.metrics import (
-    accuracy_score, precision_score, recall_score, f1_score,
-    roc_auc_score, confusion_matrix, classification_report,
-    roc_curve, precision_recall_curve
-)
+import logging
+import warnings
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+import joblib
+import matplotlib.pyplot as plt
 # Note: XGBoost excluded due to libomp dependency issues on macOS
 import mlflow
 import mlflow.sklearn
-from typing import Dict, List, Tuple, Any, Optional
-import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import seaborn as sns
-import joblib
-from pathlib import Path
-import logging
-import warnings
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (accuracy_score, classification_report,
+                             confusion_matrix, f1_score,
+                             precision_recall_curve, precision_score,
+                             recall_score, roc_auc_score, roc_curve)
+from sklearn.model_selection import (GridSearchCV, StratifiedKFold,
+                                     cross_val_score)
 
 warnings.filterwarnings('ignore')
 logger = logging.getLogger(__name__)
@@ -420,7 +421,7 @@ def load_model(filepath: str):
 if __name__ == "__main__":
     from data_processing import prepare_data
     from feature_engineering import create_preprocessing_pipeline
-    
+
     # Prepare data
     X_train, X_test, y_train, y_test = prepare_data()
     
