@@ -4,7 +4,7 @@
 # ====================
 # Stage 1: Builder
 # ====================
-FROM python:3.10-slim as builder
+FROM python:3.10-slim AS builder
 
 WORKDIR /app
 
@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir --user -r requirements.txt
 # ====================
 # Stage 2: Production
 # ====================
-FROM python:3.10-slim as production
+FROM python:3.10-slim AS production
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
