@@ -214,7 +214,7 @@ def get_data_summary(df: pd.DataFrame) -> dict:
 if __name__ == "__main__":
     # Test the data processing pipeline
     X_train, X_test, y_train, y_test = prepare_data()
-    print(f"\nData preparation complete!")
+    print("\nData preparation complete!")
     print(f"Training samples: {len(X_train)}")
     print(f"Test samples: {len(X_test)}")
     print(f"Features: {list(X_train.columns)}")
