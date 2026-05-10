@@ -102,7 +102,7 @@ curl -o data/heart_disease.csv $DATA_URL
 3. **Feature Distributions**: Histograms for all features
 4. **Box Plots**: Outlier detection for numerical features
 
-*See notebook `01_eda.ipynb` for complete visualizations*
+*See notebook [notebooks/01_eda.ipynb](notebooks/01_eda.ipynb) for complete visualizations*
 
 ### 2.6 Key Insights
 
@@ -412,6 +412,15 @@ kubectl port-forward svc/heart-disease-api 8000:80
 curl http://localhost:8000/health
 ```
 
+**Deployment Screenshots:**
+
+| Screenshot | Description |
+|------------|-------------|
+| ![K8s Pods](screenshots/deployment/K8s_pods.png) | Pods running in Kubernetes |
+| ![K8s Services](screenshots/deployment/k8s_services.png) | Kubernetes services |
+| ![K8s All Resources](screenshots/deployment/k8s_all_resources.png) | All K8s resources |
+| ![K8s API Health](screenshots/deployment/k8s_api_health.png) | API health check via K8s |
+
 ---
 
 ## 9. Monitoring & Logging
@@ -458,6 +467,14 @@ services:
     ports: ["3000:3000"]
 ```
 
+**Monitoring Screenshots:**
+
+| Screenshot | Description |
+|------------|-------------|
+| ![Prometheus Targets](screenshots/deployment/Prometheus_targets.png) | Prometheus showing API target UP |
+| ![Prometheus Metrics](screenshots/deployment/prometheus_metrics.png) | API metrics in Prometheus |
+| ![Grafana Dashboard](screenshots/deployment/Grafana_dashboard.png) | Grafana monitoring dashboard |
+
 ---
 
 ## 10. Architecture Diagram
@@ -479,73 +496,37 @@ services:
 
 ## 11. Setup Instructions
 
-### 11.1 Prerequisites
+### Complete Setup Guide
 
-- Python 3.10+
-- Docker & Docker Compose
-- kubectl (for Kubernetes)
-- Git
+**For detailed, step-by-step setup and execution commands, see [FINAL_EXECUTION_STEPS.md](FINAL_EXECUTION_STEPS.md)**
 
-### 11.2 Local Setup
+This document contains all commands for:
+- Python environment setup
+- Dataset download
+- Model training
+- Docker deployment
+- Kubernetes setup
+- Service verification
 
-```bash
-# 1. Clone repository
-git clone https://github.com/gaur-samal/MLOps_assignment_2025cs05001.git
-cd MLOps_assignment_2025cs05001
+### Quick Reference
 
-# 2. Create virtual environment
-python -m venv venv
-source venv/bin/activate
+| Deployment Type | Start Command | Access URL |
+|-----------------|--------------|-----------|
+| **Local** | `uvicorn api.app:app --reload` | http://localhost:8000 |
+| **Docker** | `docker-compose up -d` | http://localhost:8000 |
+| **Kubernetes** | `kubectl apply -f deployment/kubernetes/` | Via `kubectl port-forward` |
 
-# 3. Install dependencies
-pip install -r requirements.txt
+### Service Endpoints
 
-# 4. Download dataset
-chmod +x download_data.sh
-./download_data.sh
+| Service | URL | Purpose |
+|---------|-----|---------|
+| API | http://localhost:8000 | Model predictions |
+| API Docs | http://localhost:8000/docs | Interactive API testing (Swagger) |
+| MLflow | http://localhost:5001 | Experiment tracking & artifacts |
+| Prometheus | http://localhost:9090 | Metrics collection |
+| Grafana | http://localhost:3000 | Metrics visualization (admin/admin) |
 
-# 5. Run EDA (optional)
-jupyter notebook notebooks/01_eda.ipynb
-
-# 6. Train model
-jupyter notebook notebooks/02_model_training.ipynb
-
-# 7. Start API
-uvicorn api.app:app --reload
-
-# 8. Access API docs
-# Open http://localhost:8000/docs
-```
-
-### 11.3 Docker Setup
-
-```bash
-# Build and run
-docker-compose up -d
-
-# Access services
-# API: http://localhost:8000
-# MLflow: http://localhost:5000
-# Prometheus: http://localhost:9090
-# Grafana: http://localhost:3000
-```
-
-### 11.4 Kubernetes Setup
-
-```bash
-# Start Minikube
-minikube start
-
-# Build image
-eval $(minikube docker-env)
-docker build -t heart-disease-api:latest .
-
-# Deploy
-kubectl apply -f deployment/kubernetes/
-
-# Access API
-minikube service heart-disease-api --url
-```
+> **macOS Note**: MLflow runs on port 5001 (not 5000) due to AirPlay Receiver conflict.
 
 ---
 
@@ -588,6 +569,9 @@ MLOps_assignment_2025cs05001/
 ├── api/
 ├── data/
 ├── deployment/
+├── docs/
+│   ├── VIDEO_RECORDING_GUIDE.md
+│   └── FINAL_EXECUTION_STEPS.md
 ├── models/
 ├── notebooks/
 ├── screenshots/
@@ -597,16 +581,25 @@ MLOps_assignment_2025cs05001/
 ├── docker-compose.yml
 ├── README.md
 ├── REPORT.md
+├── FINAL_EXECUTION_STEPS.md
 └── requirements.txt
 ```
 
-### B. Links
+### B. Documentation Files
+
+| File | Purpose |
+|------|---------|
+| `REPORT.md` | Comprehensive project report (this file) |
+| `README.md` | Project overview and quick start |
+| `FINAL_EXECUTION_STEPS.md` | Complete setup & execution commands |
+| `QUICK_CHECKLIST.md` | Quick reference checklist |
+| `EXECUTION_SUMMARY.md` | Overview of completion status |
+
+### C. Quick Links
 
 - **Repository**: https://github.com/gaur-samal/MLOps_assignment_2025cs05001
 - **CI/CD Pipeline**: https://github.com/gaur-samal/MLOps_assignment_2025cs05001/actions
 - **API Documentation**: http://localhost:8000/docs
-- **MLflow UI**: http://127.0.0.1:5000
+- **MLflow UI**: http://localhost:5001
 
 ---
-
-*Report generated for MLOps Assignment I*

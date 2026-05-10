@@ -30,16 +30,17 @@ services:
       - heart-disease-network
 
   # MLflow tracking server
+  # Note: Using port 5001 to avoid conflict with macOS AirPlay Receiver (port 5000)
   mlflow:
     image: python:3.10-slim
     container_name: mlflow-server
     ports:
-      - "5000:5000"
+      - "5001:5001"
     volumes:
       - ./mlruns:/mlruns
     command: >
       bash -c "pip install mlflow && 
-               mlflow ui --backend-store-uri file:///mlruns --host 0.0.0.0 --port 5000"
+               mlflow ui --backend-store-uri file:///mlruns --host 0.0.0.0 --port 5001"
     networks:
       - heart-disease-network
 
@@ -50,7 +51,7 @@ services:
     ports:
       - "9090:9090"
     volumes:
-      - ./deployment/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - /Users/gsamal/Downloads/Mlops_assignment/deployment/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
