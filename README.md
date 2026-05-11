@@ -19,6 +19,7 @@ A production-ready MLOps solution for heart disease prediction using machine lea
 - [Development](#development)
 - [Deployment](#deployment)
 - [Monitoring](#monitoring)
+- [Video Demo](#video-demo)
 - [Contributing](#contributing)
 
 ## 🎯 Overview
@@ -89,6 +90,10 @@ docker-compose up -d
 # Access the API
 curl http://localhost:8000/health
 ```
+
+> **macOS users**: MLflow runs on port **5001** (not 5000) due to AirPlay Receiver conflict.
+
+> **For full step-by-step setup with all commands**: see [FINAL_EXECUTION_STEPS.md](FINAL_EXECUTION_STEPS.md)
 
 ### Local Development
 
@@ -246,12 +251,20 @@ MLOps_assignment_2025cs05001/
 │   ├── test_api.py
 │   ├── test_data_processing.py
 │   └── test_model.py
+├── docs/
+│   └── VIDEO_RECORDING_GUIDE.md
+├── .gitattributes
 ├── .gitignore
+├── Demo_video.mov              # Demo video (Git LFS)
 ├── docker-compose.yml
 ├── Dockerfile
 ├── download_data.sh
+├── EXECUTION_SUMMARY.md
+├── FINAL_EXECUTION_STEPS.md
+├── QUICK_CHECKLIST.md
 ├── README.md
 ├── REPORT.md
+├── REPORT.pdf
 ├── requirements.txt
 └── setup.py
 ```
@@ -288,11 +301,11 @@ flake8 src/ api/ tests/
 
 ```bash
 # Start MLflow UI
-mlflow ui --backend-store-uri file:./mlruns --port 5000 --host 127.0.0.1
-# Open http://127.0.0.1:5000 in browser
-
-# Open http://localhost:5000
+mlflow ui --backend-store-uri file:./mlruns --port 5001 --host 127.0.0.1
+# Open http://127.0.0.1:5001 in browser
 ```
+
+> **macOS Note**: Port 5000 is used by AirPlay Receiver. MLflow is configured on port **5001** instead.
 
 ## 🚢 Deployment
 
@@ -357,6 +370,36 @@ Available metrics:
 2. Access Grafana: http://localhost:3000
 3. Login: admin / admin
 4. Create dashboards using Prometheus data source
+
+### Service URLs
+
+| Service | URL | Credentials |
+|---------|-----|--------------|
+| API | http://localhost:8000 | None |
+| API Docs (Swagger) | http://localhost:8000/docs | None |
+| MLflow | http://localhost:5001 | None |
+| Prometheus | http://localhost:9090 | None |
+| Grafana | http://localhost:3000 | admin / admin |
+
+---
+
+## 🎬 Video Demo
+
+A recorded walkthrough of the complete MLOps pipeline is included in this repository.
+
+**File**: `Demo_video.mov`
+
+**Covers** (≈ 5 minutes):
+1. Project structure overview
+2. CI/CD pipeline (GitHub Actions — all 4 jobs passing)
+3. Docker containerization & live API prediction via Swagger UI
+4. MLflow experiment tracking (4 model runs, metrics & artifacts)
+5. Kubernetes deployment (2 replicas, HPA, health checks)
+6. Monitoring — Prometheus targets UP + Grafana dashboard
+
+> The video is stored with **Git LFS** due to file size. If Git LFS is not configured locally, download directly from the [GitHub releases](https://github.com/gaur-samal/MLOps_assignment_2025cs05001/releases) page or the repository file browser.
+
+---
 
 ## 📄 License
 
